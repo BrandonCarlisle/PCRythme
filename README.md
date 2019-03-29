@@ -20,6 +20,22 @@ press 9 to start
 
 delete key to delete
 
+## Songs/Tracks
+
+Songs as txt files in Assets/Songs
+
+Tracks as mp3. in Assets/Resources/SongsAudio
+
+Song Markup. {S:P:2.24} 
+
+1st col S = note type, single. 
+
+2nd col P = note category, P = purple
+
+3rd col 2.24 = note time, when note is played in song
+
+
+
 
 
 
