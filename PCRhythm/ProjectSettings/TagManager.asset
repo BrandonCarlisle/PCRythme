@@ -11,6 +11,7 @@ TagManager:
   - SingleNoteYellow
   - SingleNoteRed
   - SingleNotePink
+  - Dancer
   layers:
   - Default
   - TransparentFX

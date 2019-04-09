@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using PCRhythm;
 
 
@@ -32,12 +33,17 @@ public class PlayControllerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        loadLevel1();        
+        loadLevel(LevelSelect.level);        
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(1);
+        }
+
         if (countdownLevel)
         {
             levelCountdown();
@@ -49,12 +55,32 @@ public class PlayControllerScript : MonoBehaviour
 
         if (levelTimer >= levelEnd)
             EndLevel();
+
+        if (levelTimer > 2f)
+            MenuAudio.instance.RemoveBackgroundAudio();
     }
 
-    void loadLevel1()
+    void loadLevel(int level)
     {
-        var songLevel1 = new SongLevel("Epic", "Songs/epic1", "epic", 120, 3.2f);
-        loadLevel(songLevel1);
+        switch (level)
+        {
+            case 1:
+                var songLevel1 = new SongLevel("Ark_Cut", "Ark_Cut", "Ark_Cut", 69, 3.2f);
+                loadLevel(songLevel1);
+                break;
+            case 2:
+                var songLevel2 = new SongLevel("Dizzy3", "Dizzy3", "Poli_Mix_Track", 62, 3.2f);
+                loadLevel(songLevel2);
+                break;
+            case 3:
+                var songLevel3 = new SongLevel("Epic", "Epic1", "Epic", 179, 3.2f);
+                loadLevel(songLevel3);
+                break;
+            default:
+                var songLevel4 = new SongLevel("Ark_Cut", "Ark_Cut", "Ark_Cut", 69, 3.2f);
+                loadLevel(songLevel4);
+                break;
+        }            
     }
 
 
@@ -141,7 +167,7 @@ public class PlayControllerScript : MonoBehaviour
             gameClock.DisableDebugTimer();
 
         //switch to score screen
-
+        SceneManager.LoadScene(3);
 
     }
 }

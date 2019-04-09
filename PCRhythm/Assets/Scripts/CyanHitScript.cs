@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class CyanHitScript : MonoBehaviour
 {
+    public ScoreManager scoreManager;
+
     void Start()
     {
         InputManager.onCyanPressed += hitCheck;
@@ -33,7 +35,8 @@ public class CyanHitScript : MonoBehaviour
             colliderCheck(hit2, 1);
         else if (Physics.Raycast(ray3, out hit3, 100))
             colliderCheck(hit3, 2);
-
+        else
+            scoreManager.AddToScore(-50);
     }
 
     void colliderCheck(RaycastHit hit, int offset)

@@ -6,6 +6,7 @@ using UnityEngine;
 public class PurpleHitScript : MonoBehaviour
 {
     //source https://www.youtube.com/watch?v=fFq5So-UB0E
+    public ScoreManager scoreManager;
 
     void Start()
     {
@@ -36,7 +37,8 @@ public class PurpleHitScript : MonoBehaviour
             colliderCheck(hit2, 1);
         else if (Physics.Raycast(ray3, out hit3, 100))
             colliderCheck(hit3, 2);
-
+        else
+            scoreManager.AddToScore(-50);
     }
 
     void colliderCheck(RaycastHit hit, int offset)

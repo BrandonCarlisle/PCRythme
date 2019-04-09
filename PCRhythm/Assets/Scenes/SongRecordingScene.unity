@@ -2008,7 +2008,7 @@ MonoBehaviour:
   songSpeed: 1
   gameClock: {fileID: 380480163}
   audioControl: {fileID: 1526920013}
-  songStart: 70
+  songStart: 30
   singleNotePurple: {fileID: 7863619035585627762}
   singleNoteOrange: {fileID: 1532168398}
   singleNoteCyan: {fileID: 574531121}

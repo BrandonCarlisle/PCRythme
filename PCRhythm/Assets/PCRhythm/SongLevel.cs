@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace PCRhythm
 {
@@ -15,10 +16,13 @@ namespace PCRhythm
         public float SongDelay { get; set; }
 
         public SongLevel(string levelName, string songPath, string audioPath, float levelLength, float songdelay = 3.2f)
-        {
+        {      
             var levelRecording = new SongRecording(levelName);
             this.LevelName = levelName;
-            levelRecording.SetRawSongText(FileManagement.ReadText(songPath));
+
+            TextAsset songAsset = (TextAsset)Resources.Load("SongNotes/" + songPath);
+            levelRecording.SetRawSongText(songAsset.text);
+
             this.LevelNotes = levelRecording.readSong();
             this.AudioPath = audioPath;
 
