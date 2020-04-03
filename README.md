@@ -1,5 +1,6 @@
 # PCRythme
 
+PLAY
 https://simmer.io/@mythcore/~17934241-ed6b-5c93-f2d7-7b28309f8423
 
 ## Main Controls
